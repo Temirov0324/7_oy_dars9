@@ -85,3 +85,4 @@ def related_words(request, pk):
     related = Word.objects.filter(category=word.category).exclude(id=pk)[:20]
     serializer = RelatedWordsSerializer(related, many=True)
     return Response(serializer.data)
+
